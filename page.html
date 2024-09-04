@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+</head>
+<body>
+    <form action="on.php" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="tel">Телефон:</label>
+        <input type="text" id="tel" name="tel" pattern="8\d{3}\d{3}\d{2}\d{2}" required><br>
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+</html>

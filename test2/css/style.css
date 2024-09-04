@@ -1,0 +1,18 @@
+.products{
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.product{
+   font-family: Arial, Helvetica, sans-serif;
+   padding: 20px;
+}
+p{
+    text-align: right;
+}
+
+.notInStuck{
+    background-color: grey;
+}

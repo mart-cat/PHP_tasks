@@ -9,10 +9,10 @@
 <body>
 <div class="products"> 
     <?php foreach ($products as $product): ?> 
-        <div class="product <?= $product['quantity'] ? '' : 'notInStuck' ?>"> 
-            <h2><?= ($product['name']) ?></h2>
-            <p><?= ($product['price']) ?> р.</p>
-            <?php if (!$product['quantity'] ) : ?>
+        <div class="product <?= $product->isStuck() ? '' : 'notInStuck' ?>"> 
+            <h2><?= ($product->getName()) ?></h2>
+            <p><?= ($product->getPrice()) ?> р.</p>
+            <?php if (!$product->isStuck()  ) : ?>
                 <p> нет в наличии</p>
             <?php endif; ?>
             

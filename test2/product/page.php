@@ -18,14 +18,8 @@
     <h2> Рекомендации </h2>
 
     <div class="products"> 
-    <?php foreach ($sponsored as $product): ?> 
-        <div class="product <?= $product->isStuck() ? '' : 'notInStuck';  ?>"> 
-            <a href = "product?id=<?= $id ?>"> <h2><?= ($product->getName()) ?> </h2></a>
-            <p><?= ($product->getPrice()) ?> р.</p>
-            <?php if (!$product->isStuck() ) : ?>
-                <p> нет в наличии </p>
-            <?php endif; ?>
-        </div>
+    <?php foreach ($sponsored as $id => $product): ?> 
+        <?php include "../prod_vie.php" ?>
     <?php endforeach; ?> 
 
     </div>   

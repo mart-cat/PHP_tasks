@@ -2,9 +2,9 @@
 
 class Product
 {
-    private string $name;
-    private int $price;
-    private int $quantity;
+    private  $name;
+    private  $price;
+    private  $quantity;
 
     public function __construct(string $name, int $price, int $quantity)
     {
@@ -43,7 +43,7 @@ class Product
 
 class Sponser extends Product
 {
-    private string $description;
+    private $description;
     public function __construct(string $name, int $price, int $quantity, string $description )
     {
         parent::__construct($name, $price, $quantity);

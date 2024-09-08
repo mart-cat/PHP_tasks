@@ -11,8 +11,21 @@
 }
 p{
     text-align: right;
+  
 }
 
 .notInStuck{
     background-color: grey;
 }
+
+.sposor-container{
+    background-color: rgb(234, 218, 248);
+    text-align: center;
+}
+
+.fyp h2 {
+
+    text-align: center;
+
+}
+

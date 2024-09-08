@@ -1,62 +1,67 @@
-<?php 
-/* $products = [
-    [
-        'name' => 'Товар 1',
-        'price' => 100.50,
-        'quantity' => 10
-    ],
-    [
-        'name' => 'Товар 2',
-        'price' => 200.00,
-        'quantity' => -5
-    ],
-    [
-        'name' => 'Товар 3',
-        'price' => 150.75,
-        'quantity' => 20
-    ],
-    [
-        'name' => 'Товар 2',
-        'price' => 200.00,
-        'quantity' => 5
-    ]
-];*/
+<?php
 
+class Product
+{
+    private string $name;
+    private int $price;
+    private int $quantity;
 
-class Product{
-    private $name;
-    private $price;
-    private $quantity;
+    public function __construct(string $name, int $price, int $quantity)
+    {
 
-    public function __construct($name, $price, $quantity){
+        $this->name = $name;
+        $this->price = $price;
+        $this->quantity = $quantity;
+    }
 
-        $this ->name = $name;
-        $this ->price = $price;
-        $this ->quantity = $quantity;}
+    public function getName(): string
+    {
+        return $this->name;
+    }
 
-        public function getName(){
-            return $this-> name;
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
+    public function getQuantity(): int
+    {
+        return $this->quantity;
+    }
+
+    public function isStuck(): bool
+    {
+        if ($this->quantity > 0) {
+            return true;
+        } else {
+            return false;
         }
-
-        public function getPrice(){
-            return $this-> price;
-        }
-        
-        public function getQuantity(){
-            return $this-> quantity;
-        }
-
-        public function isStuck(){
-            if ($this-> quantity > 0){
-                return true;
-            }
-            else return false;
-        }
-
-
     }
 
 
-$products =[];
-$products [] = new Product('Товар 1', 100.50,10);
-$products [] = new Product('Товар 2', 100.50, -10);
+}
+
+class Sponser extends Product
+{
+    private string $description;
+    public function __construct(string $name, int $price, int $quantity, string $description )
+    {
+        parent::__construct($name, $price, $quantity);
+        $this->description = $description;
+    }
+
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+}
+
+
+$products = [];
+$products[] = new Product('Товар 1', 200, 10);
+$products[] = new Product('Товар 2', 100, 10);
+$products[] = new Sponser('Товар 3', 10000, 10, 'Ура деньги');
+$products[] = new Product('Товар 4', 23230, -10);
+$products[] = new Product('Товар 5', 100, -10);
+$products[] = new Sponser('Товар 6', 10000, -10, 'Ура деньги');
+
